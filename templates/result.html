@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Result</title>
+</head>
+<body>
+    <h1>Comparison Result</h1>
+    <p>Label: {{ label }}</p>
+    {% if image_path %}
+        <img src="{{ url_for('static', filename=image_path) }}" alt="Closest Image">
+    {% else %}
+        <p>No closest image found.</p>
+    {% endif %}
+    <a href="{{ url_for('index') }}">Upload another image</a>
+</body>
+</html>
